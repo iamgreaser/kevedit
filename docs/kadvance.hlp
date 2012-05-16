@@ -1,0 +1,19 @@
+@Advanced Editing Tools
+$Advanced Editing Tools
+
+:backbuffer;Re-sizable Backbuffer
+:buflock;Backbuffer Locking
+:acquire;Acquire Mode
+:gradient;Gradient Draw Mode
+
+Information on backbuffer functions can
+now be found in:
+!-kbackbuf;The Backbuffer
+
+:gradtool;Gradient Tool
+:randfill;Random Flood Fill
+
+Information on tools involving selected
+areas can now be found in:
+!-kselect.hlp;Tile Selection
+

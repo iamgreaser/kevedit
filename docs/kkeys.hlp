@@ -1,0 +1,123 @@
+@Keystroke Quick Reference
+$Keystroke Quick Reference
+
+!general;General
+!info;Info Dialogs
+!move;Movement
+!file;File Operations
+!color;Color
+!draw;Drawing
+!patbuf;Pattern Buffer
+!select;Tile Selection
+!menu;Tile Menus
+
+:general;General
+
+ENTER
+  Modifies the tile under the cursor and
+  copies it to the backbuffer.
+INSERT
+  Copies the tile under the cursor to the
+  backbuffer.
+ q - Quits KevEdit
+ n - Creates a new world
+ z - Clears the current board
+ r or ALT-T - Runs zzt
+ h - Help
+ ! - Loads text editor
+CTRL-O
+  Reveal hidden objects
+ALT-ENTER
+  Toggle fullscreen
+
+:info;Info Dialogs
+ i - Board Info
+ w - World Info
+CTRL-T
+  Tile Info
+CTRL-S
+  Stats Info
+
+:move;Movement
+
+CURSOR KEYS
+  Move the cursor.
+ALT+CURSOR KEYS
+  Move the cursor faster.
+PAGEUP
+  Previous Board
+PAGEDOWN
+  Next Board
+b - Switch/edit boards
+
+:file;File Operations
+
+ s - Saves the world
+ l - Loads a world
+ t - Board transfer
+ o - Object Library load/save
+
+:color;Color
+
+ c - Cycles through foreground colors
+ C - Cycles through background colors
+ k - Kolor dialog
+ v - Toggles blinking colors
+ d - Toggles default color mode
+CTRL-K
+  Kolor dialog (use with F4)
+
+:draw;Drawing
+
+SPACEBAR
+  Plots the currently selected pattern in
+  the backbuffer.
+TAB
+  Continuously plots with cursor movement.
+SHIFT-TAB
+  Continuously plots with cursor movement
+  while cycling through the backbuffer.
+BACKSPACE
+  Erases tile under the cursor.
+DELETE
+  Erases tile under the cursor.
+ f - Floodfills the current tile
+ F - Randomly floodfills the current tile
+ g - Draws a faded gradient
+ F4 - Text Entry
+
+:patbuf;Pattern Buffer
+
+ p - Cycles through backbuffer
+ P - Cycles backward through backbuffer
+ a - Acquires tiles to the backbuffer
+ < - Reduces size of backbuffer
+ > - Increases size of backbuffer
+ / - Locks backbuffer
+ 0 - Selects empty pattern
+ 1-9 - Selects backbuffer position
+
+:select;Tile Selection
+
+ESCAPE
+  Clears selected area
+SHIFT+CURSOR KEYS
+  Select a block of tiles
+ x - Flood select
+ X - Select all similar tiles
+ f - Fill
+ F - Random Fill
+ g - Gradient
+CTRL-C
+  Copy selected tiles
+CTRL-V
+  Paste copied tiles
+CTRL-X
+  Cut selected tiles
+
+:menu;Tile Menus
+
+ F1 - Item Menu
+ F2 - Creature Menu
+ F3 - Terrain Menu
+

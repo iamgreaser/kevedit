@@ -1,0 +1,2994 @@
+@@creature.hlp
+$Creatures
+:top;
+     From the world editor, press F2 to
+bring up the menu of creatures.  A wide
+variety are available, each with dif-
+ferent characteristics.
+
+!bears;Bears
+!centis;Centipedes
+!lions;Lions
+!tigers;Tigers
+!objects;Objects
+!pushers;Pushers
+!ruffians;Ruffians
+!shark;Sharks
+!slime;Slime
+!guns;Spinning guns
+
+Attributes:
+
+     Many types of creatures have
+attributes, such as intelligence,
+sensitivity, and direction, that can be
+customized.  These attributes affect
+different aspects of a creature's
+movement.
+
+     Some creatures have an Intelligence
+setting.  This affects how well the
+creature will find the player.  One with a
+low intelligence moves largely at random,
+while an intelligent creature actively
+follows the player.
+
+Note:
+
+     There is not space to describe each
+creature in much detail.  You must learn
+by experimenting and watching the
+behavior of all of the creatures.  
+
+:bears;Bears:
+
+     Bears are attracted to the player
+when the two are close together.  Their
+goal is to attack the player.
+
+     When a bear comes into contact with a
+Breakable Wall, both disappear.
+
+:ruffians;Ruffians:
+
+     Ruffians move sporadically,
+alternately moving and resting.  They will
+try to catch the player.  
+
+:objects;Objects:
+
+     Objects are a versatile kind of
+creature and can be customized using the
+ZZT-OOP programming language.
+
+     When placing an Object on the board,
+you may pick any character to represent
+it.  Then, you enter commands to control
+the creature during game play.
+
+     If you want to modify the program of
+an already-existing Object, position the
+cursor above it and press [ENTER].
+
+!-lang;Programming instructions.
+
+:shark;Sharks:
+
+     Sharks cannot move on land; they can
+only move in water. Be careful when
+walking around shark infested waters,
+because they can very quickly jump out and
+harm you.
+
+:slime;Slime:
+
+     A single Slime will spread out by
+replicating itself until an entire
+region is filled.  Slime only oozes
+through empty space, so it is blocked by
+walls.
+
+     As slime spreads out, it leaves a
+trail of breakable walls.  The player can
+stop the slime by touching it;  the only
+threat it poses is in trapping the player.
+
+:guns;Spinning guns:
+
+     Spinning guns rotate and shoot in
+random directions.  By placing walls on
+various sides of a gun, it can be aimed in
+any desired direction.
+
+:pushers;Pushers:
+
+     Pushers move slowly in a given
+direction, pushing Boulders and Sliders
+ahead of them.  They can move the player,
+but do not pose a direct threat.
+
+:lions;Lions:
+
+     Lions move quickly about the board,
+attracted to the player according to their
+intelligence.  Lions can not shoot.
+
+:tigers;Tigers:
+
+     Tigers move toward the player and
+shoot bullets.
+
+     These bullets are harmful only to
+the player.  In fact, no creatures will
+directly harm other creatures.
+
+:centis;Centipedes:
+
+     These are the most interesting type
+of creature, because they can contain
+many different parts linked together.
+
+     A Centipede consists of a Head and
+several body Segments.  The Head decides
+where to move, and the body follows
+behind.
+
+     To place a Centipede on the board,
+first place the Head, then put Body
+segments along side, in a line.  All parts
+must be in contact.
+
+     When a Centipede is shot, it will
+break up into two smaller centipedes,
+which move independently.
+
+@@index.hlp
+@Help
+$Help
+
+!-kevedit;Using Kevedit
+!-kkeys;Keystroke Quick Reference
+!-langref;ZZT OOP Language reference
+!-knew;New Features
+
+$ZZT Documentation
+!-about;About ZZT   / ZZTWeb
+!-game;Playing ZZT / In-Game Help
+!-editor;ZZT Editor
+@@item.hlp
+$Items
+:top;
+The following items are available:
+
+!ammo;Ammunition
+!torches;Torches
+!bombs;Bombs
+!conv;Conveyors
+!doors;Doors
+!dupes;Duplicators
+!energ;Energizers
+!gems;Gems
+!keys;Keys
+!pass;Passages
+!scrolls;Scrolls
+
+:ammo;Ammunition
+
+     When the player touches a unit of
+ammo, he receives ten bullets.
+
+:torches;Torches
+ 
+     Torches can be collected, and allow
+the player to see a small area in a dark
+room by pressing T.  Torches cannot be
+pushed, and neither can energizers, but
+every other item can.
+     
+:gems;Gems.
+
+     Gems are bonus points for a player.
+Touching a gem awards the player ten bonus
+points and one unit of health.
+
+     By using ZZT-OOP's "GIVE" and "TAKE"
+commands, you can create objects that
+trade supplies or just about anything in
+exchange for gems.
+
+:keys;Keys.
+
+     Keys are used to unlock doors.  They
+are color-coded, so there are seven colors
+of keys.  To unlock a door, the player
+must posses a key of the same color.
+
+     The player can not hold two keys of
+the same color, though he can hold all
+seven different-colored keys at the same
+time.
+
+     Black keys give the player 255 gems
+instead of a key.
+
+:doors;Doors.
+
+     Doors prevent the player from
+entering a region.  To get through a door,
+the player must be holding a matching key.
+If this is the case, then the door will
+open and the player will lose possession of
+the key.  The color of a door is
+determined by its background color. Doors
+with a black background need 255 gems to
+open.
+
+:scrolls;Scrolls.
+
+     Scrolls contain text messages, such
+as hints, dialog, and puzzles.  When the
+player touches a scroll, the message
+appears for the player to read.
+
+     If the scroll contains one or two
+lines of text, the message will be flashed
+on the bottom of the screen.  Otherwise,
+a window will pop up and the player may
+browse through the text.
+
+     Scrolls can also execute ZZT-OOP
+programming.  !-langref;ZZT-OOP Reference
+Manual #put, #restart, and even #shoot,
+works!  But whatever you do, do NOT use
+the following commands:
+
+/
+?
+#become      <- Runtime error!
+#char
+#cycle
+#die         <- Runtime error!
+#go
+#idle
+#lock
+#unlock
+#walk
+#try
+
+Almost all of these do not work because of
+two rules:
+
+*  The only thing that can interact with a
+scroll's program is the player.  It starts
+at the beginning of the program when the
+player touches it.
+*  After printing out the text, the scroll
+has to die. To disappear.
+
+:pass;Passages.
+
+     A passage is a gateway to another
+board.  When you place a passage on the
+board, you must specify which board is
+through the passage.
+
+     Whenever the player touches a
+passage, he is transported to a new board.
+The player will be placed in the new board
+as follows:
+
+*  If there is a matching pas-
+sage in the new board, the player will
+enter the destination board through it.
+To match, the exit and entrance passages
+must be the same color.
+ 
+*  Otherwise, the player will
+either arrive in the destination board
+on the spot where he appears in the board
+editor, or to where he was last on that
+board.
+
+:dupes;Duplicators.
+
+     A duplicator slowly replicates an
+object placed next to it.
+
+     First, put a creature somewhere on
+the board.  Next, place a duplicator
+adjacent to it, and specify the direction
+pointing to the creature.  Finally, put
+walls around the original creature so that
+it remains next to the duplicator.
+Duplicators can be used to fill up a board
+with creatures as a game progresses.
+Note: Never try to duplicate a boulder,
+slider, or anything else pushable, onto a
+player clone, as it causes a run-time
+error.  This will never be a problem for a
+beginning programmer, but it may be for an
+experienced one.
+
+:bombs;Bombs.
+
+     The player activates a bomb by
+touching it.  The bomb begins counting
+down from 9, exploding when it reaches 1.
+While a bomb is ticking, the player can
+move it around by pushing it.
+
+     When a bomb explodes, it will zap all
+Creatures and Breakable Walls in close
+proximity.
+
+:energ;Energizers.
+
+     Touching an energizer gives the
+player a brief taste of invincibility.
+During this time, the player changes
+colors and is free to come into contact
+with normally harmful creatures.
+Energizers cannot be pushed, and neither
+can torches, but every other item can.
+Also, the direction of SEEK is inversed
+when you are energized.
+
+:conv;Conveyors.
+
+     Conveyors cause adjacent objects to
+move.  Both clockwise and
+counter-clockwise rotating conveyors
+exist.
+
+     By placing several conveyors
+together, objects can be made to circulate
+in nearly any desired pattern.
+
+@@kadvance.hlp
+@Advanced Editing Tools
+$Advanced Editing Tools
+
+:backbuffer;Re-sizable Backbuffer
+:buflock;Backbuffer Locking
+:acquire;Acquire Mode
+:gradient;Gradient Draw Mode
+
+Information on backbuffer functions can
+now be found in:
+!-kbackbuf;The Backbuffer
+
+:gradtool;Gradient Tool
+:randfill;Random Flood Fill
+
+Information on tools involving selected
+areas can now be found in:
+!-kselect.hlp;Tile Selection
+
+@@kbackbuf.hlp
+@The Backbuffer
+$The Backbuffer
+
+In KevEdit, the backbuffer is a valuable
+tool for storing tiles, as well as
+customized gradients.
+
+!quick;Quick Keys
+!resize;Resizing the Backbuffer
+!lock;Backbuffer Locking
+!acquire;Acquire Mode
+!draw;Draw Mode
+!gradient;Gradient Draw Mode
+
+:quick;Quick Keys
+
+To quickly access a position in the
+pattern selector, the numbers 0-9 can be
+used. Pressing 0 will select the Empty
+pattern, which you will probably need
+frequently. Pressing one of 1-9 will
+select a slot in the backbuffer.
+
+:resize;Resizing the Backbuffer
+
+The backbuffer may  be  resized  using
+the '<' and '>' keys. Some gradients may
+not fit in the default ten-tile
+backbuffer, so this will prove useful.
+Only ten tiles will be visible at once,
+but the backbuffer will scroll
+automatically.
+
+The Gradient Tool, Gradient Draw Mode, and
+Random Fill all use the ENTIRE backbuffer,
+so feel free to resize the backbuffer as
+necessary using '<' and '>'.
+
+:lock;Backbuffer Locking
+
+By default, using ENTER to modify a tile,
+plotting an uncommon tile from the F1 - F3
+menus, or pressing INSERT will copy a tile
+into the backbuffer. Backbuffer locking
+prevents the backbuffer from being
+modified, except that when INSERT is
+pressed, the tile under the cursor will be
+inserted into the currently selected
+backbuffer slot, if the pattern selector
+is over the backbuffer. This mimics ZZTAE
+behavior.
+
+To toggle backbuffer locking, press '/'.
+
+:acquire;Acquire Mode
+
+Acquire mode lifts tiles into the
+backbuffer as the cursor is moved. By
+using acquire mode, one can load a large
+gradient or line of objects into the
+backbuffer with relatively few keystrokes.
+Press 'a' to toggle acquire mode. The 'a'
+next to the backbuffer will indicate
+whether acquire mode is on or off.
+
+By default, the backbuffer will be resized
+so that no non-empty tiles are lost. To
+force the backbuffer to stay the same
+size, use SHIFT+'A'.
+
+Holding down ALT while moving the cursor
+will acquire several tiles at once.
+
+:draw;Draw Mode
+
+This drawing tool should be familiar from
+the original ZZT editor. Simply press TAB
+and the currently selected pattern will be
+plotted everywhere the cursor goes. Press
+TAB again to exit Draw Mode.
+
+:gradient;Gradient Draw Mode
+
+Gradient Draw Mode works much in the same
+way as Draw Mode, except that KevEdit
+cycles through the backbuffer with each
+cursor movement. This can be used to
+easily plot gradients or other patterns.
+
+Use SHIFT-TAB to activate gradient mode
+and TAB to turn it off. When gradient mode
+is on, KevEdit will cycle through the
+backbuffer backward so that tiles are laid
+down in the same order they enter the
+buffer. To cycle forward, press SHIFT-TAB
+a second time.
+
+Holding down ALT while moving will
+continuously paint the gradient for ten
+spaces at a time horizontally and five
+tiles at a time vertically.
+
+If the one of the standard patterns is
+selected, a fade from foreground color to
+background color will be used instead of
+the backbuffer.
+@@kbasics.hlp
+@The Basics of Using KevEdit
+$The Basics of Using KevEdit
+
+!movement;Movement and Plotting
+!sidebar;Getting to Know the Sidebar
+!color;The Color Selector
+!defc;Default Color Mode
+!uncommon;Uncommon Tiles
+!creatures;Editing Creatures & Objects
+!zzl;  * Object Libraries
+!text;Placing Text on the Board
+!file;File Operations
+!transfer;Board Transfer
+!zzt;Working with ZZT
+
+:movement;Movement and Plotting
+
+You control the blinking cursor which can
+be moved around the 60x25 board with the
+arrow keys.  Holding ALT with an arrow key
+will move faster.  Notice that the cursor
+changes the colour of the tile under it.
+This is to help you find it when it gets
+lost.
+
+If you press the SPACEBAR, a white solid
+will be plotted where the cursor is.  The
+TAB key will turn on or off drawing mode.
+In drawing mode, the cursor plots
+automatically when moved.
+!-kbackbuf:gradient;See Gradient Draw Mode
+
+To remove the tile under the cursor, press
+DELETE. If the tile is a creature with
+terrain beneath it, then the terrain will
+remain.
+
+If you create an enclosed area and want to
+fill it in with one type of tile, place
+the cursor inside and press lowercase 'f'
+to flood fill the area.
+!-kbackbuf:randfill;See Random Flood Fill
+
+:brdselect;Board Selection Dialog
+
+There are many boards in a ZZT world.
+Press 'b' to view the board list, where
+you can choose a different board to edit
+or create a new one.
+
+In the board selection dialog, boards may
+be moved using LEFT and RIGHT and deleted
+with BACKSPACE. All boards will be
+"re-linked" to reflect this change. To
+prevent linkage problems, the first board,
+the Title Screen, may not be moved, though
+it can be deleted.
+
+Alternately, pressing PAGEUP or PAGEDOWN
+on the main KevEdit screen will move
+cycle through the board list.
+
+:sidebar;Getting to Know the Sidebar
+
+The blue bar to the right of the screen is
+the KEVEDIT SIDEBAR.  It displays
+information about the current state of the
+editor as well as keys for common
+actions.
+
+The top line of the sidebar looks
+something like this:
+(1, 1) 0/150
+
+The numbers in parenthesis are the
+coordinates of your cursor, ranging from
+(1, 1) to (60, 25).  The next numbers tell
+you how many PARAMETER RECORDS are stored
+on this board.  Parameter records store
+information for configurable things:
+objects, scrolls, and enemies all have
+parameter records.  ZZT has a limit of 150
+records per board.  Keep an eye on how
+many you have used so that you don't run
+out!
+
+The next line displays the title of the
+world, which can be modified in the
+!-kwldinfo;World Info Dialog.
+Unless you modify the title yourself, this
+will be the same as the world's filename.
+
+On the bottom of the sidebar are two
+horizontal bars.  The first one has a
+gradient of a solid block to empty space,
+a line, and more empty space.  This is the
+PATTERN SELECTOR.  Press 'p' to move the
+arrow forward along the selector and
+shift+'p' to move it backward.  In order,
+the tiles in the pattern selector are:
+
+        * Solid Wall
+        * Normal Wall
+        * Breakable Wall
+        * Water
+        * Empty Space
+        * Line
+
+Press space to plot any of these common
+patterns that the arrow is over.  Next to
+the patterns is the BACKBUFFER.  When you
+plot an uncommon tile (not from the
+pattern selector), it will end up in the
+backbuffer.  To copy something from the
+board into the backbuffer, place your
+cursor over it and press ENTER or INSERT.
+It will appear in the backbuffer, where
+you can plot it like anything else in the
+pattern selector.
+
+More information is available on:
+!-kbackbuf;The Backbuffer
+
+:color;The Color Selector
+
+The horizontal bar below the pattern
+selector is the COLOR SELECTOR.  Every
+tile you plot has a foreground and
+background color.  The colors on the top
+are for the foreground, which you can
+switch between by pressing 'c'.  There are
+fewer colors available for the background,
+which you can select by pressing
+SHIFT+'c'.
+
+To make the foreground color blink on and
+off, press 'v' before you plot.
+
+The color can also be selected with 'k',
+which brings up a dialog box for
+(possibly) faster color selection.
+
+:defc;Default Color Mode
+
+Next to the color selector lies the
+letter D.  When it is bright and capital,
+DEFAULT COLOR MODE is on.  When it is
+lowercase and dim, it is off.  Default
+color mode (or DefC) is a great idea that
+I stole from MegaZeux 1.0.  When it is
+enabled, objects get plotted with their
+normal colors.  Ammo is dark cyan, torches
+are brown, objects in the backbuffer are
+their original color, etc.  When you turn
+DefC off, anything you plot will be the
+color chosen in the color selector.  This
+is a great way to customize game items and
+to change the color of objects.
+
+:uncommon;Uncommon Tiles
+
+Well, it's not that they're uncommon, just
+not used as much as the nice gradient on
+the pattern selector.  To choose among
+items, creatures, and terrains, press F1,
+F2, or F3.  If you want to plot any of
+these, press its corresponding letter
+(which will be displayed on the sidebar).
+
+!-item.hlp;Items
+!-creature.hlp;Creatures
+!-terrain.hlp;Terrain
+
+:creatures;Editing Creatures & Objects
+!zzl;Object Libraries
+
+If a tile has editable stats, such as
+a built-in enemy, object, or scroll,
+pressing ENTER will allow you to modify
+them. After you have done this, a copy
+will be placed in the backbufffer.
+!-kstats.hlp;Stats Editor
+
+To copy a tile to the backbuffer without
+editing it, press INSERT.
+
+To reveal hidden objects press CTRL-O.
+
+:zzl;Object Libraries
+Pressing 'o' will bring up the ZZT Object
+Library Menu. You will have the option of
+loading an object from a ZZL library,
+saving to the end of an existing library,
+or saving to a new library. When saving an
+object, you must provide a (hopefully)
+unique name for that object.
+
+:text;Placing Text on the Board
+
+To add readable text tiles to the board,
+press F4 to activate text entry mode.
+Every character you type will be written
+on the board.  To add a non-typable
+character, press CTRL+'a' for the ASCII
+selection dialog box. Text will wrap past
+the end of the line, though it will not
+wordwrap.  To leave text entry mode, press
+F4 again.
+
+:file;File Operations
+
+KevEdit can load and save normal (and
+abnormal) ZZT worlds.  To load a world,
+press 'l' and you will be presented with a
+list of all world files in the current
+directory.  To save your world, press 's'.
+You will be prompted for an 8 letter file
+name.
+
+:transfer;Board Transfer
+
+KevEdit has several options for
+transferring a board from one world to
+another. Pressing 't' will bring up the
+Board Transfer menu:
+
+  *  Import From ZZT World
+  *  Import From Board File
+  *  Export To Board File
+
+Import From ZZT World will prompt you to
+select a world and then a board within
+that world. Import From Board File will
+prompt you to select a .brd file.
+
+The chosen board will be inserted after
+the current board, without overwriting
+anything. To import a title screen, make
+the first board the current board, import,
+then use the board select dialog to delete
+the first board.
+
+Export To Board File will prompt for a
+filename to save the current board to.
+
+:zzt;Working with ZZT
+
+To aid in testing a game, pressing 'r'
+will run ZZT on the current world, jumping
+directly to the title screen. ALT-T may
+also be used to achieve the same effect.
+
+For this to work, zzt.exe must be in the
+same directory as kevedit.exe. zzt.dat and
+any other .hlp files should be kept in
+either the same folder as kevedit.exe
+or in the docs sub-folder.
+
+KevEdit now supports extended help
+systems when running ZZT. Simply extract
+an extended help package (such as
+Chronos's ZZTWeb) into the same folder as
+kevedit.exe and run the installation batch
+file. Feel free to delete any zzt.dat
+files from your hard drive except the one
+in the same directory as kevedit.exe (or
+the docs subdirectory).
+
+For the truly lazy, the ZZTUnder project
+does an excellent job of handling all of
+the above for you, plus more. Visit
+http://zztunder.tk/ for more information.
+@@kbrdinfo.hlp
+@Board Info Dialog
+$Board Info Dialog
+
+!title;Title
+!darkness;Board is Dark
+!zap;Re-enter When Zapped
+!timelimit;Time Limit
+!maxshots;Maximum Shots
+!boards;Adjacent Boards
+!boardlink;* Link feature *
+!size;Board Size
+
+Use ENTER to toggle or edit each of these
+properties. The LEFT and RIGHT arrows, as
+well as + and - will increase and
+decrease each option, where possible.
+
+:title;Title
+
+Press enter to change the title of the
+board. The title may be up to 34
+characters and may use the $ and !; zzt
+markup characters for special effects in
+the board dialogs.
+
+:darkness;Board is Dark
+
+Enter will toggle between darkness and
+brightness. The player must use torches to
+see in a dark room.
+
+:zap;Re-Enter When Zapped
+
+When this option is on and the player is
+shot or is touched by an enemy, he will
+be moved back to the position where he
+entered the room.
+!-zap;Ways the player is "zapped"
+
+When the player is zapped, he or she is
+returned to the position set by Re-Enter X
+and Re-Enter Y. Modifying these values is
+usually not useful, however, because ZZT
+sets them whenever the player enters a
+board.
+
+:timelimit;Time Limit
+
+A limit can be imposed on the amount the
+player may spend in a room. Once the time
+expires, the player is zapped and the
+counter starts over.
+
+This is most useful in combination with
+"Re-enter when zapped".
+
+Objects can #give and #take time.
+However, #give moves the counter closer
+to zero, while #take gives the player
+more time. If #take would put the timer
+over the time limit, it does not work and
+the message in take is sent.
+
+:maxshots;Maximum Shots
+
+This option determines how many shots the
+player may fire at the same time on a
+board. A player cannot fire until less
+than this number of his or her bullets
+remain on the board.
+
+:boards;Adjacent Boards
+
+This option links boards together so that
+the player can travel from one room to
+another by moving off the screen.
+
+:boardlink;* Link feature *
+
+KevEdit has a special feature to aid in
+the proper linkage of boards. An asterisk
+will appear next to any adjacent board
+which links back to the current board in
+the opposite direction. To force the other
+board to link backward, simply press '*'
+when that board is selected.
+
+Take that ZZT Editor.
+
+:size;Board Size
+
+The size of the current board is displayed
+at the bottom of the Board Info Dialog in
+units of both bytes and kilobytes, with
+1024 bytes to a kilobyte (not 1000!). If
+this value exceeds 20,000 bytes then the
+number will show red.
+
+There is much debate over exactly what the
+board size limit is for ZZT. By consensus,
+boards become unstable somewhere near
+20KB, but no one has yet proven any
+specific value. 20,000 bytes, which is
+just 469 bytes short of 20KB, seems as
+likely a candidate as any number.
+@@kevedit.hlp
+@Using KevEdit
+$-----------------------------------------
+KevEdit 0.5.1
+                      Powerful ZZT Editing
+$-----------------------------------------
+Copyright (C) 2000-2005
+        Kev Vance      <kvance@kvance.com>
+With many contributions by
+         bitman      <bitman@users.sf.net>
+:top;
+:contents;Using Kevedit
+!-knew;* New features *
+!-kbasics;Basics of Using KevEdit
+!-kkeys;Keystroke Quick Reference
+
+!-kbackbuf;The Backbuffer
+!-kselect;Tile Selection
+!-kstats;Stats Editor
+!-kobjedit;The Object Code Editor
+
+!-kbrdinfo;Board Information
+!-kwldinfo;World Information
+!-ktileinf;Tile Information
+
+!-item;Items
+!-creature;Creatures
+!-terrain;Terrain
+
+!-ksupport;Support and Troubleshooting
+!help;The Help System
+!quit;Quitting
+!enjoy;Enjoy!
+
+:help;Help!
+
+KevEdit includes a fully functional help
+system, as you are very much aware since
+you are reading this.
+!-kobjedit:help;Object Editor Help
+
+:quit;Quitting
+
+For your safety, pressing 'q' will ask if
+you really want to quit.  If you answer in
+the affirmative, KevEdit will terminate.
+It will not ask you if you really /really/
+want to quit, or perhaps you would just
+like to save your work instead, because I
+hate it when programs doubt my quititude.
+
+:enjoy;Enjoy!
+
+We hope you enjoy using KevEdit as much as
+we enjoyed creating it. Feedback is always
+welcome; we'd love to hear what you think
+of our work.
+
+    Kev Vance <kvance@kvance.com>
+    Ryan Phillips <bitman@users.sf.net>
+    July 1, 2005
+@@kkeys.hlp
+@Keystroke Quick Reference
+$Keystroke Quick Reference
+
+!general;General
+!info;Info Dialogs
+!move;Movement
+!file;File Operations
+!color;Color
+!draw;Drawing
+!patbuf;Pattern Buffer
+!select;Tile Selection
+!menu;Tile Menus
+
+:general;General
+
+ENTER
+  Modifies the tile under the cursor and
+  copies it to the backbuffer.
+INSERT
+  Copies the tile under the cursor to the
+  backbuffer.
+ q - Quits KevEdit
+ n - Creates a new world
+ z - Clears the current board
+ r or ALT-T - Runs zzt
+ h - Help
+ ! - Loads text editor
+CTRL-O
+  Reveal hidden objects
+ALT-ENTER
+  Toggle fullscreen
+
+:info;Info Dialogs
+ i - Board Info
+ w - World Info
+CTRL-T
+  Tile Info
+CTRL-S
+  Stats Info
+
+:move;Movement
+
+CURSOR KEYS
+  Move the cursor.
+ALT+CURSOR KEYS
+  Move the cursor faster.
+PAGEUP
+  Previous Board
+PAGEDOWN
+  Next Board
+b - Switch/edit boards
+
+:file;File Operations
+
+ s - Saves the world
+ l - Loads a world
+ t - Board transfer
+ o - Object Library load/save
+
+:color;Color
+
+ c - Cycles through foreground colors
+ C - Cycles through background colors
+ k - Kolor dialog
+ v - Toggles blinking colors
+ d - Toggles default color mode
+CTRL-K
+  Kolor dialog (use with F4)
+
+:draw;Drawing
+
+SPACEBAR
+  Plots the currently selected pattern in
+  the backbuffer.
+TAB
+  Continuously plots with cursor movement.
+SHIFT-TAB
+  Continuously plots with cursor movement
+  while cycling through the backbuffer.
+BACKSPACE
+  Erases tile under the cursor.
+DELETE
+  Erases tile under the cursor.
+ f - Floodfills the current tile
+ F - Randomly floodfills the current tile
+ g - Draws a faded gradient
+ F4 - Text Entry
+
+:patbuf;Pattern Buffer
+
+ p - Cycles through backbuffer
+ P - Cycles backward through backbuffer
+ a - Acquires tiles to the backbuffer
+ < - Reduces size of backbuffer
+ > - Increases size of backbuffer
+ / - Locks backbuffer
+ 0 - Selects empty pattern
+ 1-9 - Selects backbuffer position
+
+:select;Tile Selection
+
+ESCAPE
+  Clears selected area
+SHIFT+CURSOR KEYS
+  Select a block of tiles
+ x - Flood select
+ X - Select all similar tiles
+ f - Fill
+ F - Random Fill
+ g - Gradient
+CTRL-C
+  Copy selected tiles
+CTRL-V
+  Paste copied tiles
+CTRL-X
+  Cut selected tiles
+
+:menu;Tile Menus
+
+ F1 - Item Menu
+ F2 - Creature Menu
+ F3 - Terrain Menu
+
+@@knew.hlp
+@New Features
+$New Features
+
+$New in Version 0.5.1
+!-langtut;Improved syntax highlighting
+!-ksupport;Support help topic
+!-kbasics:text;F4 text entry wraps at end of line
+!-kselect;Select discriminates by object char
+:;  *  DOS virtual shift: toggle using F12
+
+$Bugs fixed in version 0.5.1
+:;  *  Duplicator cycle speed is not 0
+:;  *  Params created for F3 menu items
+:;  *  Stats Editor panel updated
+!-kbrdinfo:zap;Re-Enter X and Y fixed
+:;  *  Blink walls reversed in F3 menu
+
+$New in Version 0.5.0
+:;  *  Native Linux and Windows support
+!-kstats;Stats Editor documentation
+!-kselect;Tile Selection
+!-kselect:copy;Copy and Paste
+!-ktileinf;Tile Info
+!-item;Items documentation
+!-creature;Creatures documentation
+!-terrain;Terrain documentation
+!-kbackbuf:acquire;Acquire Mode grows backbuffer
+!-kstats:bind;Bind Index in Stats Editor
+!-kbasics:zzt;ALT-T runs zzt for testing
+:;  *  CTRL-K selects color (for F4 mode)
+:;  *  CTRL-O reveals hidden objects
+
+$Bugs fixed in 0.5.0
+:;  *  Monitor recognized as valid type
+:;  *  Object Editor panel updated
+:;  *  Saved games using #bind now load
+:;  *  Object #lock-ing supported
+:;  *  Time remaining available for bombs
+
+$New in Version 0.4.0
+:;  *  Libzzt2 - greater stability
+!-kbasics:brdselect;Board Movement and Deletion
+!-kbasics:uncommon;All uncommon tiles now available
+!-kbasics:creatures;Creature Editing
+!-kbasics:transfer;Board Transfer
+!-kobjedit:play;Testing ZZT Music
+!-kadvance:gradient;Improved gradient draw tool
+!-kadvance:buflock;Backbuffer locking
+!-kbasics:sidebar;Backbuffer quick keys 0-9
+!-kkeys;More useful quick key reference
+!-kbasics:zzt;Extended help when running ZZT
+
+$Bugs fixed in 0.4.0
+:;  *  Terrain under creatures remains
+:;  *  Paste w/o copy first does not crash
+
+$New in Version 0.3.4
+!-kadvance:gradtool;Gradient Tool
+!-kbasics:zzt;Run ZZT at title screen
+!-langtut;OOP Language Tutorial
+:;  *  Multi-directory file dialogs
+:;  *  ALT works better in draw mode
+
+$Bugs fixed in 0.3.4
+  *  Occasional crash of Help Dialog
+  *  Memory leak in backbuffer on Quit
+
+$New in Version 0.3.3
+!-kevedit:help;Hypertext help system
+!-kbrdinfo;Board Info Dialog
+!-kwldinfo;World Info Dialog
+!-kbasics:color;Kolor Dialog
+!-kbasics:zzl;ZZT Object Library Support
+!-kobjedit:copy;Copy & paste uses CTRL
+!-kadvance:randfill;Floodfill advancements
+
+$Bugs fixed in 0.3.3
+  *  Escape cancels save operation
+  *  Cut doesn't crash when used on last
+     line in text editor
+
+$New in Version 0.3.2
+!-kadvance:backbuffer;Re-sizable backbuffer
+!-kadvance;Advanced Editing Tools
+!-kbasics:creatures;More creatures
+!-kobjedit:copy;Copy and paste
+@@kobjedit.hlp
+@The All-Powerful Object Code Editor
+$The Object Code Editor
+
+!copy;Copy & Paste
+!wordwrap;Word Wrap
+!ascii;ASCII Charater Insertion
+!files;Loading and Saving Text Files
+!zzm;Importing ZZT Music
+!play;Testing ZZT Music
+!help;Context Sensitive Help
+!txted;Text Editor (! editor)
+
+Objects and scrolls are programmed in the
+ZZT-OOP language.  When you edit these
+types, you will be presented with the
+object editor.  This is a simple text
+editor with features specific to ZZT
+programming.  ARROW KEYS move the cursor,
+ESCAPE quits, ctrl+'y' deletes a line, et
+cetera. A text editor may also be accessed
+by pressing '!' on the main screen, a la
+zzt.
+!txted;More information on ! editor
+
+:copy;Copy & Paste
+
+The Object editor features copy and paste.
+Use SHIFT to select a region of text, then
+press CTRL+'c' to copy. CTRL-'v' may then
+be used to paste the copied text later.
+CTRL-'x' will cut the selected text while
+CTRL-DELETE simply clears without copying.
+
+:wordwrap;Word Wrap
+
+On by default, word wrap allows text to
+spill over onto the next line when typing
+paragraphs. The editor is just intelligent
+enough to identify zzt commands and avoid
+word-wrapping them improperly. Use ALT+'-'
+and ALT+'+' (or ALT+'=') to increase or
+decrease the maximum length of a line.
+Between 42 and 1, word wrap is set to off,
+which prevents wrapping of any kind.
+
+:ascii;ASCII Charater Insertion
+
+Arbitrary ASCII may be inserted characters
+into your program by pressing ctrl+'a'.
+If the cursor is on the same line as a
+ #char command, it will place the number of
+the character into the program.
+
+:files;Loading and Saving Text Files
+
+The Object Code Editor can be used to load
+and save text files. ALT+'s' will save the
+program to a file and ALT+'o' will load a
+previously saved file, replacing any text
+already in the editor. ALT+'i' will insert
+a file without destroying existing work.
+
+:zzm;Importing ZZT Music
+
+Music stored in ZZM formatted files can be
+loaded into the Object Editor quite
+easily. Simply press ALT+'m', select a ZZM
+file and a song to load.
+
+NOTE: Due to extreme laziness and the
+complexities of programming, KevEdit will
+only recognize songs for which titles are
+provided. The music ripper does not
+provide titles, so ripped files will have
+to be edited before using. See the
+included file soundfx.zzm for an example
+of how to do this.
+
+:play;Testing ZZT Music
+
+To test a song in KevEdit, simply move the
+cursor to the beginning of the song and
+press CTRL-T. To hear the music without
+the slurring problem (that is, with tiny
+breaks between notes), use ALT-T.
+
+:help;Context Sensitive Help
+
+Pressing F1 will bring up the ZZT-OOP
+Programming Reference. If the cursor is on
+the same line as a #command, it will look
+that command up in the help.
+
+:txted;Text Editor (! editor)
+
+Pressing '!' while editing a ZZT World
+will open a general text editor with
+similar functions to the object editor.
+When you exit the text editor by pressing
+ESC, your work will be remembered for the
+next time you open the text editor, until
+you exit KevEdit. If you wish to save your
+work to a file, use ALT-S.
+@@kselect.hlp
+@Tile Selection
+$Tile Selection
+
+Tile selection is a very powerful tool
+offered by KevEdit. Once a set of tiles
+has been selected, it can be copied,
+pasted into, or filled in various ways.
+
+!selecting;Selecting Tiles
+!copy;Copy and Paste
+!fill;Filling
+!randfill;Random Filling
+!gradtool;Gradient Tool
+
+:selecting;Selecting Tiles
+
+Selecting tiles is easy. To quickly select
+a block of tiles, hold down SHIFT while
+moving the cursor with the arrow keys.
+Release shift, move the cursor, and repeat
+to add another block to the selection.
+
+To flood select a group of similar tiles,
+press lowercase 'x'. To select all tiles
+on the current board which are similar to
+the tile under the cursor, press
+SHIFT+'X'.
+
+The current selection can be reset by
+pressing ESCAPE.
+
+:copy;Copy and Paste
+
+To copy the selected area, press CTRL-C.
+You may then press CTRL-V to paste the
+copied tiles. Use the arrow keys to move
+the copied tiles to where you want
+them, then press SPACEBAR or ENTER. To
+cancel pasting, press ESCAPE.
+
+To cut a selected area, press CTRL-X.
+This will copy the selected area and then
+fill it with the currently selected
+pattern.
+
+If an area is selected when you paste a
+group of tiles, then only the selected
+area will be affected. This can be very
+useful, especially when combined with the
+gradient tool.
+
+:fill;Filling
+
+Once an area has been selected, it can be
+filled with the current pattern by
+pressing lowercase 'f'.
+
+If an area is not selected, pressing 'f'
+will floodfill around the cursor. This is
+equivalent to pressing 'x' then 'f'.
+
+:randfill;Random Filling
+
+Pressing SHIFT+'F' will fill the
+selected area with tiles chosen at random
+from the pattern buffer. If the backbuffer
+is selected, tiles will be randomly chosen
+from there. If the standard patterns are
+selected, a mix of the current foreground
+and background colours will be used.
+
+If no tiles are selected, a random
+floodfill will occur.
+
+BEWARE: once an area is filled with
+random tiles, it is difficult to undo.
+Save beforehand if possible. An undo
+feature is in the works, but don't get
+your hopes up too high.
+
+In a random flood fill, all tiles used are
+given equal probability. To increase the
+occurrence of a certain kind of tile, put
+more than one copy in the backbuffer.
+
+!-kbackbuf;See Backbuffer Documentation
+
+:gradtool;Gradient Tool
+
+One of the most versatile drawing tools
+offered by KevEdit, the Gradient tool
+allows a custom or built-in gradient to be
+drawn in various ways.
+
+Press 'g' to activate the Gradient Tool
+and follow the provided instructions.
+
+If an area is not selected, you will be
+able to select one block or flooded
+region. This will be depreciated in future
+releases.
+
+If the pattern selector is above the
+standard patterns (left of the
+backbuffer), then the gradient tool will
+use the current colour settings to create
+a gradient of walls fading from the
+foreground colour to the background
+colour.
+
+If the pattern selector is above the
+backbuffer, the patterns in the backbuffer
+will be used by the gradient tool.
+
+!-kbackbuf;See Backbuffer Documentation
+@@kstats.hlp
+@Stats Editor
+$Stats Editor
+
+!stats;Stats
+!cycle;Cycle
+!obj;Objects and Scrolls
+!passage;Passages
+!adv;Advanced Tweaking
+!bind; * Bind to
+!leader; * Leader and Follower
+
+:stats;Stats
+
+Many ZZT tiles, especially creatures, have
+additional information, commonly called
+"stats," "attributes," or "params," which
+controls the behavior of those tiles. The
+Stats Editor, accessed by pressing ENTER
+over a tile with stats, allows you to
+modify the stats for that tile.
+
+The UP and DOWN arrow keys may be used to
+select which stat to modify. ENTER often
+allows you to enter a specific value for a
+stat, while LEFT and RIGHT can be used to
+increase and decrease a stat's value.
+
+To see a list of all the stats on current
+board, press CTRL-S to open the Stats Info
+dialog. Here you can easily access any
+tile with stats without needing to find it
+on the board first. Even stats beyond the
+edge of the board can sometimes be found
+here...
+
+:cycle;Cycle
+
+Most creatures have a cycle speed. A cycle
+of 1 is the fastest speed possible in ZZT.
+Higher values make creatures move more
+slowly. A cycle of 0 causes a creature to
+not move at all, though it can still
+inflict damage on the player when touched.
+
+:obj;Objects and Scrolls
+
+Objects are special creatures programmed
+in the very simple ZZT-OOP (Object
+Oriented Programming) language.
+Scrolls use a small subset of this
+language to display a message to the
+player. When you edit the program or text
+of either type, you will be presented with
+the Object Editor, a powerful text editor
+tailored specifically to ZZT-OOP
+programming.
+
+!-langref;The ZZT-OOP Programming Language
+!-kobjedit;The KevEdit Object Editor
+!-creature:objects;More on Objects
+!-item:scrolls;More on Scrolls
+
+:passage;Passages
+
+Passages allow the player to travel from
+one board to another. The "passage
+destination" determines which board the
+player will end up on when he or she steps
+into the passage.
+
+!-item:pass;More on Passages
+
+:adv;Advanced Tweaking
+
+Advanced tweaking allows you to finely
+control a tile's stats. Modifying these
+values may potentially crash ZZT.
+
+X Step and Y Step are used to store a
+direction for some tiles: pushers,
+duplicators, transporters, objects, etc.
+Usually only the values -1, 0, and 1 are
+used, and other values can be dangerous.
+For example, a pusher with an X Step of 2
+and a Y Step of 0 will move two steps to
+the right every cycle, traveling through
+walls or other tiles without touching
+them. Be careful: such a pusher can even
+travel beyond the edge of the board and
+cause ZZT to crash!
+
+The three Data stats have different
+meanings for each creature. Some are
+usually ignored while others may represent
+intelligence, duration, or something
+similar. There will usually be no need to
+modify these values unless you need a very
+smart Tiger or Ruffian.
+
+Objects and scrolls have a Program
+Instruction stat which controls where
+program execution will begin. This is
+especially useful in saved games, but can
+be used in regular ZZT worlds as well. A
+value of zero represents the beginning of
+an object's program. A value of -1 is used
+for objects which have #end-ed and are not
+currently executing code. Other values
+represent a character offset from the
+beginning of the object's program.
+
+:bind;Bind to
+
+One object may share another's code by
+being bound to that object. Use the "Bind
+to" stat to bind an object to another.
+Objects which already have a program
+cannot also be bound.
+
+WARNING: ZZT may do very weird things if
+you bind to something that is not an
+object.
+
+Using bind here is essentially the same as
+puting a #bind command in an object's
+program.
+
+:leader;Leader and Follower
+
+Centipedes parts move together in chains.
+The leader and follower stats tell each
+centipede part who to lead and who to
+follow. If no values are specified, the
+centipedes will usually be able to figure
+this out on their own. There shouldn't
+usually be any reason to modify these
+values.
+
+WARNING: ZZT may do weird things if you
+lead or follow anything other than a
+centipede part.
+
+@@ksupport.hlp
+@Support and Troubleshooting
+$Support and Troubleshooting
+
+!web;Website
+!trouble;Troubleshooting
+!support;Support
+
+:web;Website
+
+Visit http://kevedit.sourceforge.net/ to
+check for new releases, get the CVS code,
+post bug reports, etc.
+
+:trouble;Troubleshooting
+
+If you are having trouble using SHIFT to
+select blocks or text in the DOS version
+of KevEdit, you can use F12 to toggle
+selection on or off.
+
+:support;Support
+
+Technical support for KevEdit is not
+guaranteed. However, you are encouraged to
+send an email to bitman
+<bitman@users.sf.net> if you have any
+questions, problems, or praise. Also
+consider posting to the "ZZT Editors"
+forum on http://zzt.the-underdogs.org/ if
+you have a general question. For
+announcements and general discussion of
+KevEdit, visit the Forums on KevEdit's
+development page:
+
+http://sourceforge.net/projects/kevedit/
+
+If you find a bug, try to fix it and send
+in a patch. :)  If you can't fix it,
+report it. For the overzealous, you can do
+what bitman did join in on the development
+if you find sending in patches too
+tedious. CVS is great for that sort of
+thing.
+@@ktileinf.hlp
+@Tile Info
+$Tile Info
+
+!info;Tile Info
+!warn;Warning
+!kind;ZZT-OOP Kind
+!id;Id Number
+!color;Color
+!coord;Coordinate
+
+!stats;Stats
+!sindex;Stat Index
+!under;Tile Underneath
+!len;Code Length
+!inst;Current Code
+
+:info;Tile Info
+
+The Tile Info dialog displays advanced
+information about the tile under the
+cursor, some of which can be modified.
+Press CTRL-T to access the dialog.
+
+:warn;Warning
+
+Modifying these values may cause your
+world to become unstable when run in ZZT.
+Stability in KevEdit will not be
+affected.
+
+:kind;ZZT-OOP Kind
+
+The ZZT-OOP Kind is the name of the tile
+used in the ZZT-OOP commands #change
+and #become. A description in parenthesis
+is used for types which cannot be accessed
+in ZZT-OOP, such as blink wall rays. The
+board edge type has an empty ZZT-OOP kind
+because it is created by default if no
+kind is specified.
+
+Modifying this value will allow you to
+choose from the list of known types.
+Changing the type will not modify the
+objects stats in any way! This can be used
+to create walls with object code, for
+example, though the code will not execute.
+Removing and re-adding a tile's stats will
+correct this.
+
+:id;Id Number
+
+This is the number internally assigned to
+the tile which identifies its type. The
+number is given in both decimal and
+hexadecimal notation.
+
+Be careful when modifying this value. Any
+values above 53 are more than likely to
+cause a crash in ZZT. Only change this if
+you are testing the effects of these
+types.
+
+:color;Color
+
+The color of the tile is given in
+hexadecimal with a textual description.
+Note that ZZT-OOP uses only light colors
+and cannot change a tile's background
+color.
+
+Color is completely safe to modify.
+
+:coord;Coordinate
+
+This is the position of the tile on the
+board, starting at (1, 1) in the
+upper-left hand corner.
+
+:stats;Stats
+
+Only certain tiles have stats by default.
+However, any tile can have stats and any
+tile can have no stats. Creatures without
+stats are unable to move, but can still
+harm the player. Empty tiles with stats
+are often called Black Holes. Giving stats
+to other tiles that usually do not have
+them does not generally affect their
+behavior. Remember that each board can
+only have 150 tiles with stats.
+
+:sindex;Stat Index
+
+The stats for each board are stored in a
+specific order. This index tells where an
+item's stats are in the list of stats.
+This value cannot currently be edited.
+
+:under;Tile Underneath
+
+A tile with stats can have either a fake
+wall, water, or empty underneath it.
+KevEdit automatically handles this by
+storing this information when you plot a
+tile with stats onto a fake wall, water,
+or empty. On the main editing screen,
+use DELETE to remove a tile with stats
+and restore the tile underneath.
+
+Changing this value should be safe. Try
+putting unusual types (such as walls)
+under a lion, tiger, or bear.
+
+:len;Code Length
+
+For objects and scrolls which have code or
+text, Code Length is the size of that
+text. If an object or scroll is empty then
+this will not be displayed.
+
+:inst;Current Code
+
+An object's current code is determined by
+the Program Instruction. This is the first
+line of code which will execute when the
+program begins executing. If the object is
+not executing, the message "(Program
+Execution #end-ed)" will be given.
+
+More on the Program Instruction can be
+found in:
+!-kstats:adv;Advanced Stats Tweaking
+
+@@kwldinfo.hlp
+$World Info
+
+!name;World Name
+!keys;Keys
+!inv;Inventory
+!misc;Miscellaneous
+!flags;Set/Clear Flags
+
+:name;World Name
+
+The name of the world need not necessarily
+match the filename of the world, although
+it usually should (minus the .zzt
+extension).
+
+If you do not modify the world name and
+you save your world under a new name, the
+world name will be changed to match. If,
+however, you either change the world name,
+or rename the file outside of KevEdit (so
+that the two do not match before a save
+occurs), then KevEdit will leave the world
+name as-is when saving.
+
+If a different name is used, that name
+will appear under the word "World" on the
+title screen menu in ZZT.  When a user
+quits from the world, then presses 'p' to
+play again, a different world will be
+loaded! Simply use a "file name" for the
+second world based on the "world name" of
+the first world.
+
+Example:
+
+The player loads "test.zzt" which has the
+world name "newworld". After the player
+dies in "test.zzt", he/she presses 'p' to
+play again, but instead of starting in
+"test.zzt", zzt loads "newworld.zzt".
+Consult the ZZT Encyclopedia Online for an
+example.
+
+:keys;Keys
+
+Keys which the player possesses are
+displayed as keys. Doors represent keys
+which the player could obtain. Place the
+cursor over a key or door and press ENTER
+or SPACEBAR to give or take that key from
+the player.
+
+:inv;Inventory
+
+The initial inventory of the player may be
+modified easily. Pressing ENTER edits the
+value of the item. Left and right change
+the value by ten units at a time. To
+change the value by one unit at a time,
+use '+' and '-'.
+
+:misc;Miscellaneous
+
+Torch Cycles
+ * Usually used exclusively in saved
+   games, the number of torch cycles
+   remaining indicates how long the player
+   has before a torch burns out.
+Energizer Cycles
+ * Energizer cycles, by a similar measure,
+   indicate how much longer an energizer
+   will last.
+Time Elapsed
+ * How much time within the current
+   board's timelimit countdown has been
+   used up
+Is Saved Game
+ * For saved games, this is set to true,
+   and is false for normal worlds. ZZT
+   uses the same file format for both
+   worlds and saved games, using this flag
+   to ensure that one does not impersonate
+   the other. ZZT will not play or edit
+   saved games and will not restore
+   worlds, regardless of extension.
+
+:flags;Set/Clear Flags
+
+Pressing enter on the Set/Clear Flags
+option will present a list of the
+currently set flags. DELETE or BACKSPACE
+will clear a flag.
+
+ZZT supports up to ten flags. The order of
+the flags is determined by zzt. When a
+flag is set, it is placed in the first
+available slot and removed from that slot
+when cleared. Thus the order of the flags
+is completely arbitrary, but may be useful
+in debugging saved games.
+@@lang.hlp
+$ZZT-OOP
+$Programming Language
+
+Table of contents:
+!ov;Overview
+!-langtut;Tutorial
+!-langref;Reference manual
+
+:Ov;Overview
+
+     ZZT provides a special type of
+creature, the Object, that can be made to
+interact with the player and the
+environment by using a small object-
+oriented command language.  Objects are
+very versatile, and can move, talk and
+bargain with the player, and communicate
+with other Objects.
+
+     To put an Object on the playing
+field, type F2 O. Next, you can choose a
+character to represent the Object.
+Finally, you can enter a program to
+control it.
+
+     To change an Object's program, move
+the cursor to the Object and press Enter.
+
+$How they work.
+
+     During game play, the Objects are
+actively controlled by their associated
+programs.  Commands are executed in tempo
+with the game.  Usually, an Object is
+updated 4 or 5 times per second, and
+several commands are executed on each
+update.
+
+     Objects communicate with each other
+and with the environment by sending and
+receiving messages. Understanding ZZT-OOP
+is often difficult because it is possible
+to have many objects operating at the same
+time, and each object can interact with
+any other object at any time. 
+
+$Interaction.
+
+     A programmable creature can put
+flashing one or two-line messages at the
+bottom of the screen. It can also put
+multi-line scrolling messages on the
+screen. These messages can be interactive,
+so that the player can pick choices from a
+menu.
+
+Objects can also move, shoot, and interact
+with other objects.
+
+$Messages - What are they?
+
+     ZZT's programming language is object-
+oriented, meaning that a program's flow of
+execution is controlled by sending and
+receiving messages.  Whenever an important
+event occurs, a message is sent to an
+object.  This causes the program to
+execute specific instructions to handle
+the event.  Messages can come from two
+sources: from other programmable creatures
+and from the game itself.
+
+     For example, whenever the player
+touches an object, that object receives
+the message, "TOUCH".  The object can then
+act on the message, for example by
+greeting the player or attacking.  Or, the
+object can ignore the message.
+
+     Similarly, objects can communicate
+with each other by exchanging messages.
+For example, a board contains a "BUTTON"
+object and a "GATE" object.  The player
+touches the button.  Upon being touched,
+the button sends the message "OPEN" to the
+gate object.  The gate, upon receiving
+this message, moves aside.
+
+     The first step to learning ZZT-OOP is
+seeing actual programs with explanations:
+
+!-langtut;ZZT-OOP Tutorial
+@@langref.hlp
+@Programming Reference Manual
+$ZZT-OOP Programming Language
+$(Thanks to Chronos & Tim Sweeney)
+
+!cmds;Command Reference
+!-lang;Language Overview
+!-langtut;Tutorial
+:top;
+$Reference Manual
+
+:contents;Contents: 
+!fmts;Program format
+!cmds;Commands
+!msgs;Messages
+!dirs;Directions
+!flags;Flags
+!-kinds;Kinds
+!-syntax;Detailed ZZT-OOP syntax
+
+:fmts;Program Format.
+     Besides direct commands, ZZT-OOP
+programs contain other statements that
+serve varying purposes.
+
+     Each type of statement has an
+associated symbol:
+
+ $  @  #  /  ?  :  '  !  !-
+
+     Their meanings:
+
+:;     @objectname
+     When this is on the first line of an
+object, it identifies the object by name.
+If an object is not given a name, there is
+no way to direct messages to it except
+when using ALL and OTHERS.
+
+:;     #command
+     Identifies a programming language
+command.
+
+:;     /direction 
+     Causes the object to move one space
+in the given direction.  If it is blocked,
+it will wait until it is free.
+
+:;     ?direction
+     Tells an object to try to move in a
+given direction.  If its movement is
+blocked, the command will be ignored.
+
+:;     :label
+     Identifies the part of the program
+that handles a specified message.
+Whenever the program receives the mes-
+sage, it will execute statements following
+the label.  In ZZT.DAT text format, labels
+can also be followed by a ;, like so:
+
+:;     :label;Text
+     The text appears white, and
+hyperlinks move right to the line of
+text, retaining any text before it.
+Unfortunately, this command does not work
+in ZZT-OOP.  However, most .HLP files
+implement it.
+
+:;     'comment
+     Comments have no effect, but serve to
+remind you (the programmer) what you were
+doing when you wrote the program.  They
+also serve as "pre-zapped" labels which
+can be #restored.
+
+:;     text
+     When program execution comes to a
+line of text, the text will be displayed
+on the screen.  If only a one-line message
+is given, it will be flashed on the bottom
+of the screen as a message.  For multiple
+lines, a "scroll" will be opened up on
+screen and the text will appear.  The
+contents of any window can be printed
+using Alt-P.
+
+:;     $text
+     This makes text white and centers it.
+It can be used for titles, dialog, or
+just about anything!  Note: this command
+does not work in a one-line message.  It
+simply shows the $.
+
+:text;     !msg;text
+     A hypertext-like button.  When this
+statement is included among text
+descriptions, it appears to the player as
+a button...
+
+!text;Just like this.
+     Then, as the user views the text, he
+may position the cursor on the button
+and press enter, causing the supplied
+message to be sent.
+
+:;     !-filename;text
+     This creates a hyperlink, just as !
+does, but this one opens up a ZZT window
+and displays the contents of the given
+file, as well as displaying instructions
+above.  If no extension is specified, HLP
+is used.
+
+NOTE: If accessed by an object, help files
+are faulted in that normal ! hyperlinks
+will not work in them. Links to other
+files will still work, but links within
+the file itself will not.
+
+Here is an example:
+!-langref;ZZT-OOP Reference Manual
+
+:msgs;Messages.
+
+     An object can send and receive
+(exchange) messages with itself, other
+objects, and the game itself.
+
+    Messages caused by the game itself:
+
+  TOUCH    When player
+           touches Program
+  SHOT     Program is hit by
+           bullet
+  BOMBED   Bomb explodes near
+           program
+  THUD     Program WALKs into
+           wall
+  ENERGIZE Player touches
+           ENERGIZER
+
+:dirs;Directions:
+
+$N, NORTH
+$S, SOUTH
+$E, EAST
+$W, WEST
+    Compass directions
+$I, IDLE
+    No direction, stationary.
+$SEEK
+    The direction toward the player
+       OR
+    The direction away from the player, if
+    you are energized.
+$FLOW
+    The direction in which the object is
+    currently walking.
+$RNDNS
+    Either North or South,
+    at random.
+$RNDNE
+    Either North or East, at random.
+$RND
+    Any direction, at random, with East
+    or West being twice as likely as
+    North or South. Opposite directions
+    hold equal probability.
+$CW <direction>
+    Clockwise from the given direction,
+    i.e. CW NORTH = EAST.
+$CCW <direction>
+    Counter-clockwise from the given
+    direction.
+    CW NORTH = WEST.
+$RNDP <direction>
+    A random direction perpendicular to
+    the given direction.  For example,
+    RNDP NORTH = either EAST
+    or WEST.
+$OPP <direction>
+    Opposite the given direction.
+    i.e., OPP NORTH = SOUTH.
+
+    Here are some example commands to
+demonstrate the use of directions:
+
+#GO CW RNDNS  'Go either east
+              'or west.
+#GO OPP SEEK  'Go away from
+              'the player.
+#WALK CW FLOW 'Turn clockwise
+              'from the direc-
+              'tion we're
+              'walking in.
+
+
+:flags;Flag manipulation:
+
+     Objects can manipulate simple
+variables called flags. A flag assumes
+one of two possible states: SET and
+CLEAR. Objects can alter flags, then
+take action accordingly.
+
+     Flags are not associated with
+individual objects or boards. A flag
+set by one object can be accessed by all
+other objects on all boards.
+
+     Three commands are useful here:
+
+:set;#SET <flag variable>
+:clear;#CLEAR <flag variable>
+     Set and clear flag variables.
+
+:if;#IF [NOT] <flag> [THEN] <msg>
+     Tests the condition of a flag.  If
+the flag is SET, the message is sent.
+Otherwise, the instruction is ignored.
+
+     If NOT is included, the message is
+sent if the flag is NOT SET. Otherwise,
+the instruction is ignored.
+
+     In addition to user-declared flags,
+several "internal" flags can be accessed
+by any object:
+
+$ALLIGNED
+     This flag is SET whenever the object
+is aligned with the player either
+horizontally or vertically.
+
+$CONTACT
+     This flag is SET whenever the object
+is adjacent to (touching) the player.
+
+$BLOCKED <direction>
+     This flag is SET when the object is
+not free to move in the given direction,
+and CLEAR when the object is free to move
+in the direction.
+
+$ENERGIZED
+     This flag is SET whenever the player
+has touched an energizer and can not be
+harmed by creatures and bullets.
+
+$ANY <color> <item>
+     This flag is SET if there are objects
+of the given type on the screen.
+
+:cmds;Programming commands:
+
+     All ZZT-OOP commands are preceded by
+the pound sign (#). The following com-
+mands are supported:
+
+!become;#BECOME <kind>
+!bind;#BIND <objectname>
+!change;#CHANGE <kind> <kind>
+!char;#CHAR <number>
+!flags;#CLEAR <flag variable>
+!cycle;#CYCLE <number>
+!die;#DIE
+!end;#END
+!endgame;#ENDGAME
+!give;#GIVE <item> <qty>
+!go;#GO <direction>
+!idle;#IDLE
+!if;#IF <flag> [THEN] <msg>
+!lock;#LOCK
+!play;#PLAY <sound>
+!put;#PUT <direction> <kind>
+!restart;#RESTART
+!restore;#RESTORE <message>
+!send;#[SEND] <message>
+!flags;#SET <flag variable>
+!shoot;#SHOOT <direction>
+!take;#TAKE <item> <qty> [<msg>]
+!throwstar;#THROWSTAR <direction>
+!try;#TRY <direction> [<msg>]
+!unlock;#UNLOCK
+!walk;#WALK <direction>
+!zap;#ZAP <message> 
+
+$Descriptions of commands: 
+
+:send;#[SEND] [SELF:]<message>
+     Similar to basic's "GOTO" command.
+#SEND followed by the name of a label
+within the program will cause program
+execution to continue at that label.
+
+Example:
+ :ABCDEF
+ ...program loop goes here...
+ #SEND ABCDEF
+
+#[SEND] <objectname>:<message>
+
+     Causes the execution of a different
+program to continue at a specified label
+within that program.  By using this
+command, several creatures can be
+coordinated.  For example, the player
+touches Creature A.  Creature A tells
+Creature B to attack the player.
+
+Example:
+ :TOUCH
+ #SEND CreatureB:AttackPlayer
+
+Note:  If the program receiving the
+       message is in the locked state, the
+       command will be ignored.
+       
+       See the #LOCK command for more
+       information.
+
+Note:  If there are two or more programs
+       with the given name, the message
+       will be sent to all of them.
+
+#[SEND] ALL:<message>
+     Sends a given message to ALL of the
+objects on the board.
+
+#[SEND] OTHERS:<message>
+     Sends a given message to all objects
+on the board except the object itself.
+
+#[SEND] SELF:<message>
+     Guess what! Tim Sweeney decided to
+allow a SELF para meter for the #send
+command. It only sends the message to the
+object itself.
+
+     In all #SEND commands, the SEND may
+be omitted, but messages with the same
+name as a command can't be sent in this
+way.
+
+:end;#END
+
+     Causes program operation to halt. The
+object will just sit idly by until
+stimulated by a message.
+
+:restart;#RESTART
+
+     Causes the program to go back to the
+top and start over.
+
+:go;#GO <direction>
+
+     Causes an object to move in a
+specified direction.  The object will push
+boulders forward if they are in the way.
+If the object can not move in the given
+direction, it will stand by until either
+it can move, or it is stimulated by a
+message. In other words, it is equivalent
+to /.
+
+!dirs;Valid directions
+
+:try;#TRY <direction> [<msg>]
+
+     Causes the object to move in the
+given direction if it is not blocked.
+Otherwise, the given message will be sent.
+
+:walk;#WALK <direction>
+
+     Sets the object moving in the given
+direction.  The object will continue
+moving and executing commands.
+
+     To cause a program to cease walking,
+issue the "Walk idle" command.
+
+#WALK I
+
+     When an object WALKs into a wall, it
+automatically receives a THUD message.
+Unfortunately, it will keep going back to
+the same label over and over until
+#ZAP THUD is used.
+
+:idle;#IDLE
+
+     Directs the creature to do absolutely
+nothing until it is updated next.  Same as
+the /I command.
+
+:endgame;#ENDGAME
+
+     This command takes away all of the
+player's health, terminating the game. If
+the player has a high score, it will be
+recorded.
+
+     Interestingly, if you immediately
+follow #endgame with #give health (n), the
+game will not be terminated, and the
+player's health will be set to n.
+
+     Program execution continues past
+#endgame. In fact, only 3 commands halt
+program execution:
+#END, #DIE, and #BECOME.
+
+:die;#DIE
+
+     The object will instantly vanish when
+this command is issued.  Program execution
+halts, and the object is erased from the
+screen.  The game will continue on without
+it.  It is equivalent to #become empty. It
+is recommended to use #become fake if the
+object is directly over a fake, so that
+the fake will not be erased.  Although
+less used, the same thing applies to
+water.
+
+:shoot;#SHOOT <direction>
+
+     Attempts to fire a bullet in the
+given direction.  Example:
+
+#SHOOT SEEK   'fires a bullet
+              'toward the
+              'player
+
+:throwstar;#THROWSTAR <direction>
+
+     Causes the object to throw a star in
+the given direction.  The star will try to
+collide with the player.  It is not
+recommended that you use stars in excess,
+as they are virtually impossible to avoid.
+     Throwstar WOULD be equivalent to #put
+<direction> star, but #put will destroy
+any fakes or water in its way.
+
+:zap;#ZAP <message>
+
+     Disables the first occurrence of a
+label by turning it into a comment.  For
+example, #ZAP TOUCH would turn the label
+:TOUCH into the comment 'TOUCH.  Allows a
+program to have several routines with the
+same labels, so that the desired label
+is called at the appropriate time.
+Remember that the #SEND command always
+calls the first occurrence of a label.  For
+example:
+
+ :TOUCH 'will be called first
+        'time creature is
+        'touched
+ "You touched me for the
+ first time"
+ #ZAP TOUCH
+ #END
+ :TOUCH 'will be called all
+        'subsequent times
+ "You touched me again."
+ #END
+
+DANGER! #Zap will zap the labels of all
+objects bearing the same name. In other
+words, for an object named 'object', #zap
+label is equivalent to #zap object label!
+
+#ZAP <objectname>:<message>
+
+     Zaps another object's label.
+
+:restore;#RESTORE message
+
+     Changes a ZAPped label back into a
+normal label.  Then, on subsequent calls
+to the label, the original one will be
+called instead of a secondary one.
+
+#RESTORE <objectname>:<message>
+
+      Restores another object's label.
+      Note: <objectname> can be replaced
+with ALL or OTHERS to #zap or #restore
+labels of all objects or all other
+objects, respectively.
+
+:lock;#LOCK
+
+     Puts a program into the "locked"
+state, so it will not be affected by any
+incoming messages.  Often, conflicts
+occur when two messages are sent to a
+program in a short amount of time.  The
+second message interrupts the program
+before it can finish handling the first
+one.  However, if a program LOCKs itself
+when dealing with messages, it can not be
+disturbed.
+
+:unlock;#UNLOCK
+
+     Removes a program from the "locked"
+state, so it is free to receive incoming
+messages.  Any messages that happened to
+arrive while it was LOCKed are lost.
+
+Example:
+ :TOUCH
+ #LOCK
+ 'code to handle "touch" message
+ 'goes here...
+ #UNLOCK
+ #END
+
+:give;#GIVE <item> <quantity>
+
+     Gives a certain quantity of an item
+to the player.  Good for giving bonus
+points, selling ammo, awarding extra
+health, etc.
+
+     Items:
+
+     AMMO
+     TORCHES
+     GEMS
+     HEALTH
+     SCORE
+     TIME
+
+Example:  #GIVE AMMO 10
+          (gives the player
+          10 extra shots)  
+
+Note: All items are integers with a range
+      between 0 and 32767.  The torch
+      display can only display the left 3
+      digits, so it will appear as 327,
+      but is actually 32767.
+
+:take;#TAKE <item> <qty> [<message>]
+
+     Attempts to take a certain quantity
+of an item from the player.  If the player
+does not have the given amount, none will
+be taken, and if a message is given, it
+will be sent.
+
+Example:
+ #TAKE GEMS 2 TooPoor
+ "Thank you for the gems!"
+ #END
+ :TooPoor
+ "You don't have enough gems!"
+ #END
+
+     TIME can also be used in #give and
+#take statements, as long as the time
+limit is turned on in the information
+menu.  However, #give takes the time
+closer to 0, even cycling back to the
+limit and harming the player, and #take
+will give the player more time.  If #take
+would give the player more time than the
+time limit, it does not work and the
+message in #take is sent.
+
+:play;#PLAY <music>
+
+     Plays a musical score in the
+background as the game continues.
+
+     Music:
+
+    _> [Optional  [Notes] <_
+   /   parameters]          \
+   \________________________/
+
+     Parameters:
+
+     T    32nd note follows
+     S    Sixteenth
+     I    Eighth
+     Q    Quarter
+     H    Half
+     W    Whole
+     3    Triplets: cut previous duration
+          into thirds. For example,
+          "Q3ABC" would play the notes A,
+          B, and C, with all three taking
+          up the time of a quarter note.
+     .    Adds time-and-a-half.  For
+          example, "H." would turn a
+          half-note into a half-note tied
+          to a quarter note.
+     +    Up octave
+     -    Down octave
+ 
+$Notes & rests:
+
+     X    Rest
+     A-G  Piano notes, can be followed by:
+     #    Sharp
+     !    Flat 
+
+$Rythmic sound effects:
+     0    Tick
+     1    Tweet
+     2    Cowbell
+     3    <<no effect, denotes triplet>>
+     4    Hi snare
+     5    High woodblock
+     6    Low snare
+     7    Low tom
+     8    Low woodblock
+     9    Bass drum
+
+$Other:
+    []    Open and close brackets let you
+          separate music code into parts.
+          They are much like comments.
+
+!-SOUNDFX;The sound effects built into ZZT
+
+:change;#CHANGE <kind> <kind>
+
+     Changes every specified item on the
+board into another item.  <Kind> is the
+name of an item, creature, or terrain as
+listed in the editor (by pressing f1, f2,
+or f3), but with all punctuation and
+spaces removed.  LINE, BULLET, EMPTY and
+STAR are also valid values for <kind>.
+Examples: 
+
+#CHANGE LION GEM
+    'Turns all lions on the
+    'board into gems.
+#CHANGE KEY SLIDEREW
+    'Changes all keys into
+    'east-west sliders.
+#CHANGE RED KEY CLOCKWISE
+    'Changes all red keys into
+    'clockwise conveyors.
+
+:put;#PUT <direction> <kind>
+
+     This causes a specified item to be
+placed adjacent to the object issuing the
+command.  Examples:
+
+#PUT N BLUE KEY
+    'Places a blue key north
+    'of us.
+#PUT SEEK TIGER
+    'Puts a tiger in the
+    'direction of the player.
+
+!change;What does <kind> mean?
+!-kinds;Kinds
+
+:become;#BECOME <kind>
+
+     Causes the object to suddenly change
+form into a specified item or creature.
+The object's program then ceases to exist.
+
+!change;What does <kind> mean?
+!-kinds;Kinds
+
+:char;#CHAR <number>
+
+     Causes the object to change form, so
+that it is represented on the screen as a
+different character.  <Number> can range
+from 0 to 255, and should be the ASCII
+code of the new character.
+
+!-ascii;ASCII Character Codes
+
+:cycle;#CYCLE <number>
+
+     Sets the speed at which an object is
+updated.  This can range from 1 (fastest)
+to 255 (ridiculously slow.)  When no CYCLE
+speed is specified, it defaults to 3.
+
+:bind;#BIND <objectname>
+
+     When a Program executes this
+instruction, its code will be replaced by
+the code of another object, and it will
+start executing instructions from the
+beginning.
+
+    This is a useful and space-saving
+technique.  Rather than creating ten
+objects with the same program (which would
+be stored in memory ten times), create one
+object with the program, and nine others
+that contain only a BIND statement.
+
+   DANGER! #Bind also copies the object
+name of the specified object onto that
+object. Since #zap will work on both an
+object itself and all other objects
+bearing the same name, #zaps can be
+compounded and make code inaccessible.
+
+!contents;< Contents >
+@@langtut.hlp
+@Programming Language Tutorial
+$ZZT-OOP
+$Programming Language Tutorial
+$(Extended by bitman)
+
+:top;Contents
+!simple;A Simple Example Program
+!end;The Importance of #end
+!oop;Object Oriented Programming
+!flags;Using Flags
+!hyper;Hypertext Messages
+
+     The best way to learn something is to
+jump right in, so lot's not waste any
+time:
+
+     To put an object on the board, press
+F2 O.  After picking a character to
+represent the object, you can enter a
+program to control it.
+
+NOTE: The following examples use a great
+deal of comments (everything between a '
+character and the end of a line is a
+comment). ZZT will not recognize most of
+these as comments and thus they should be
+removed before using the code.
+
+:simple;A Simple Example Program
+
+ Commands    Comments
+ ----------  -----------------
+ @BadGuy
+             ' We are giving this object
+             ' the name "BadGuy".
+ /s/s/s      ' Start out by moving south
+             ' three times.
+ #shoot n    ' Next, shoot north.
+ #end        ' Now stop and wait for us to
+             ' receive a message.
+ :shot       ' When we receive a "SHOT"
+             ' message, start doing the
+             ' following commands.
+ #shoot seek ' Shoot towards the player.
+ #end        ' Stop and wait for another
+             ' message.
+ :touch      ' Do the following when we
+             ' receive a "TOUCH" message
+ Ouch! Stop touching me.
+             ' Put the preceding text on
+             ' the screen.
+ #send shot  ' Next, send ourselves the
+             ' message "SHOT".
+
+     As soon as the player enters the
+board this object is on, the program will
+begin running at the top. This object will
+immediately move three spaces south and
+fire a shot to the north. When the program
+reaches the #end statement, the object
+will stop doing anything until a message
+is sent to it.
+
+     ZZT will send BadGuy the message
+"SHOT" whenever the player (or something
+else) shoots the BadGuy. The object will
+then shoot in the direction of the player
+and end program execution (stop running)
+until another message is sent.
+
+     Likewise, when the player (and only
+the player) touches BadGuy, the object
+will receive the "TOUCH" message. This
+causes BadGuy to display the text "Ouch!
+Stop touching me." at the bottom of the
+screen.  This time, however, instead of
+ending the program, the object sends
+itself the message "SHOT" which causes it
+to shoot in the direction of the player.
+
+:end;The Importance of #end
+
+     An object will continue executing its
+code until it reaches either the end of
+the program or an #end statement (as well
+as in a few other situations to be
+mentioned later).
+
+$An example:
+
+ @BadCode    ' Name of the object
+ :touch      ' TOUCH label
+ Humph. Don't touch me.
+
+     In this program, the text "Humph.
+Don't touch me." will be displayed
+IMMEDIATELY.  Because there is no #end
+statement, the program will continue
+through the "TOUCH" label and begin
+executing the code intended for the touch
+message only. Do not fall into this trap!
+
+:oop;Object Oriented Programming
+
+     ZZT-OOP is a relatively simple
+language and its commands are straight-
+forward.  However, it becomes very
+powerful as objects begin to interact with
+each other.
+
+     The primary difference between
+ZZT-OOP and conventional languages such as
+BASIC is the use of messages.
+
+     The following two objects illustrate
+a more intense use of messages:
+
+$Here is the first object:
+
+ @Lefty      ' This object's name.
+ /e/e/e/e    ' Move east 4 times.
+ /w/w/w/w    ' Then west 4 times.
+ #send Righty:Do
+             ' Send the "Do" message to
+             ' the object named "Righty".
+ #end        ' And halt. 
+
+$Here is the other object:
+
+ @Righty     ' This is our name.
+ #end        ' Don't do anything until we
+             ' receive a message.
+ :do         ' Here's the "Do" message.
+ /w/w/w/w    ' Move west 4 times.
+ /e/e/e/e    ' Then east 4 times.
+ #send lefty:restart
+             ' Tell our counterpart to
+             ' restart.
+ #end        ' Done for now.
+
+     These two objects form a feedback
+loop.  When the game starts, Lefty will
+move then send a message to Righty. This
+causes Righty to move then tell Lefty to
+restart.  So lefty moves, etc, etc, etc.
+
+:flags;Using Flags
+
+     Flags are a very useful way of
+remembering information and communicating
+between objects. Objects can only send
+messages to each other if they are on the
+same board.  Flags can be used across the
+boards.
+
+     Here are two objects which use flags.
+These objects need not be on the same
+board.
+
+$Here is the first object:
+
+ @Flask      ' Flask object.
+ #end        ' Wait for message.
+ :touch      ' Player touches the flask.
+ You receive the magical elixir.
+             ' Inform the player that they
+             ' have received an elixir.
+ #set elixir ' Set the flag "elixir"
+ #die        ' Cease to exist
+
+$Here is the second object:
+
+ @Wizard     ' This object is a wizard.
+ #end        ' Do nothing yet...
+ :touch      ' The player wants to talk to
+             ' the wizard.
+ #if elixir thank
+             ' If elixir has been set,
+             ' send the message "THANK".
+             ' Otherwise, continue.
+ I only talk to people with magical
+ elixirs. Go away.
+ #end        ' Halt.
+ :thank      ' Thank the player for the
+             ' elixir.
+ Thank you! I have been looking everywhere
+ for my magical elixir. I'll take that
+ from you now.
+ #clear elixir
+             ' Clear the flag "elixir".
+ #end        ' Done.
+
+     When the player touches the flask
+object, it informs the player that he or
+she has received a magical elixir and then
+disappears (dies), which of course stops
+program execution permanently.
+
+     The wizard, when touched, will check
+to see whether or not the elixir flag is
+set.  If the flag is not set, the wizard
+tells the player to find it for him. If it
+is set, the message "THANK" is sent,
+whereby the player is thanked and the
+elixir is taken away.
+
+     Up to ten flags may be set at one
+time in a ZZT world.
+
+:hyper;Hypertext Messages
+
+In the above example, the Wizard rudely
+takes the elixir from the player without
+even asking whether or not the player
+wishes to give it to him. This can,
+fortunately, be remedied.
+
+$A more polite Wizard
+
+ @PoliteWizard
+ #end
+ :touch
+ #if elixir thank
+ If only you had a magical elixer...
+ #end
+             ' NEW code to follow:
+ :thank      ' Thank the player for the
+             ' elixir.
+ Thank you! I have been looking everywhere
+ for my magical elixir. May I please have
+ it?
+             ' Politely ask for the elixir
+ 
+ !yes;Of course you can.
+ !no;No! It is mine!
+             ' Offer the player two
+             ' choices.
+ /i          ' Pause for input
+ #send thank ' If a choice is not made,
+             ' thank the player and ask
+             ' again.
+ :yes        ' The player decided to give
+             ' up the elixir.
+ Thank you very much. I am forever in your
+ debt.
+             ' Suck up to the player. :-)
+ #clear elixir
+ #end
+ :no         ' The player decided to not
+             ' give away the elixir.
+ Very well then. See if I ever do anything
+ nice for you.
+ #end
+
+Instead of simply taking the elixir away,
+the PoliteWizard offers the player two
+options, which will appear to the player
+as such:
+
+!;Of course you can.
+!;No! It is mine!
+
+The first option will send the message
+"yes", while the second will send the
+message "no". If neither option is
+selected, the program continues. In this
+case, the message "THANK" is sent again,
+forcing the player to make a choice.
+
+$Coming someday:
+
+* Give and Take a Little
+* Zapping Messages
+
+$- - -
+
+     Thus concludes this mini-tutorial.
+Once you think you have a grasp of the
+idea of ZZT-OOP programs and messages, you
+are ready to proceed to... 
+
+!-langref;The ZZT-OOP reference manual
+@@terrain.hlp
+
+$Terrains
+:top;
+     Terrains are the most important
+part of any ZZT board because they form
+the foundation upon which the game's
+action is based.
+
+     Walls, Boulders, Forest, and other
+terrains can be arranged to form
+puzzles, mazes, and scenery.  Each type of
+terrain has unique properties.
+
+$Water
+
+     Neither players nor creatures can
+travel through water, except sharks, of
+course, but bullets pass freely over it.
+The player must maneuver around water,
+taking care to avoid bullets passing over
+it.  Interesting enough, objects with
+stats, including the player, can be placed
+ON water, as well as on empty and fake.
+
+$Forest
+
+     The player can move through forest,
+clearing a path behind him.  Creatures can
+not move through forest, but readily
+follow the player through cleared paths.
+
+$Solid and Normal Walls
+
+     These walls form a barrier that is
+always impenetrable.  Nobody walks
+through walls except objects that are
+programmed to clear it out first.
+
+$Breakable Walls
+
+     These walls also block the player and
+all creatures, but can be destroyed.
+
+     When a breakable wall is shot with a
+bullet, one piece of the wall disappears.
+Also, when a bomb explodes, all breakable
+walls in the vicinity of the bomb are
+destroyed.
+
+$Boulders
+
+     Boulders are solid objects that can
+be pushed around by the player.
+
+     By combining boulders, pushers,
+walls, and other objects, a variety of
+challenging thought puzzles can be
+created.
+
+$Sliders
+
+     Sliders are similar to boulders, but
+are confined to move in a line.  A slider
+looks like a line with two arrows at
+opposite ends, and can only move in the
+direction of the arrows.
+
+$Fake walls
+
+     Fake walls look exactly like normal
+walls, but have no effect on the player.
+The player can walk over fake walls just
+as if they were empty space.  Fake walls
+are meant for creating secret passages.
+
+$Invisible walls
+
+     Invisible walls look like empty space
+to the player, but prevent the player from
+moving over them.  When the player touches
+an invisible wall, it suddenly appears as
+a normal wall.  Creatures can't pass
+through invisible walls either.
+
+$Blinking walls
+
+     A blinking wall placed on the board
+emits a ray pointing in a specified
+direction.  This ray blinks on and off at
+a constant rate, and forms a barrier that
+is difficult for the player to cross.
+
+     When created, each blinking wall
+must be assigned a starting time and a
+duration.  By creating a line of walls
+with the same duration but varying start
+times, a moving wave appears.
+
+$Transporter
+
+     When the player enters a transporter,
+he is magically moved to another area of
+the board.
+
+     Each transporter points in a given
+direction, and the player can only enter
+the transporter from behind.  He is then
+moved along a line, in the direction of
+the transporter, to the nearest trans-
+porter that points in the opposite
+direction.
+
+$Ricochet
+
+     Ricochets will redirect the direction
+of a bullet. If a bullet hits it head-on,
+it goes right back in the opposite
+direction.  If it hits a wall, and a
+ricochet is right next to its last
+position, it ricochets at a right angle,
+like so:
+
+                    ^
+                    ³
+                   ²ÀÄÄÄÄÄÄ ø
+        <ÄÄÄÄÄÄÄÄÄÄ¿*
+                   ³
+                   ø
+

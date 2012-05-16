@@ -1,0 +1,60 @@
+@Using KevEdit
+$-----------------------------------------
+KevEdit 0.5.1
+                      Powerful ZZT Editing
+$-----------------------------------------
+Copyright (C) 2000-2005
+        Kev Vance      <kvance@kvance.com>
+With many contributions by
+         bitman      <bitman@users.sf.net>
+:top;
+:contents;Using Kevedit
+!-knew;* New features *
+!-kbasics;Basics of Using KevEdit
+!-kkeys;Keystroke Quick Reference
+
+!-kbackbuf;The Backbuffer
+!-kselect;Tile Selection
+!-kstats;Stats Editor
+!-kobjedit;The Object Code Editor
+
+!-kbrdinfo;Board Information
+!-kwldinfo;World Information
+!-ktileinf;Tile Information
+
+!-item;Items
+!-creature;Creatures
+!-terrain;Terrain
+
+!-ksupport;Support and Troubleshooting
+!help;The Help System
+!quit;Quitting
+!enjoy;Enjoy!
+
+:help;Help!
+
+KevEdit includes a fully functional help
+system, as you are very much aware since
+you are reading this.
+!-kobjedit:help;Object Editor Help
+
+:quit;Quitting
+
+For your safety, pressing 'q' will ask if
+you really want to quit.  If you answer in
+the affirmative, KevEdit will terminate.
+It will not ask you if you really /really/
+want to quit, or perhaps you would just
+like to save your work instead, because I
+hate it when programs doubt my quititude.
+
+:enjoy;Enjoy!
+
+We hope you enjoy using KevEdit as much as
+we enjoyed creating it. Feedback is always
+welcome; we'd love to hear what you think
+of our work.
+
+    Kev Vance <kvance@kvance.com>
+    Ryan Phillips <bitman@users.sf.net>
+    July 1, 2005

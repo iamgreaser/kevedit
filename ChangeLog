@@ -1,0 +1,135 @@
+0.5.1
+-----
+Windows installer defaults to running KevEdit in "My Documents" folder
+F4 text entry wraps at end of line
+Virtual shift in DOS display: toggled by F12
+Flood/Tile Select discriminate by object char
+Improved syntax highlighting (especially in help browser)
+Bug fixed: duplicator cycle speed
+Bug fixed: params created for items on F3 menu
+Bug fixed: Stats editor panel updated after editing object code or passage dest
+Bug fixed: Reenter coordinates don't decrease every time a board is saved
+Bug fixed: Horizonal and vertical blink walls were reversed in F3 menu
+Bug fixed: "#if flag !msg;text" is now parsed correctly.
+Bug fixed: Messages and hypermessages now parsed correctly.
+New text editor implementation with minor usage changes.
+Usability issue: Cursor flicked on when it moves, and has a faster blink rate
+Bug fixed: SDL cursor no longer "lingers" in gradient point selection
+Linux version now supports DOSBox for running ZZT (replacing DOSEMU)
+
+0.5.0
+-----
+Native Linux and Windows via SDL display
+Linux and Windows automatic installer generation
+Param Editor interface improvements
+Tile Info with ability to add/remove stats (params) for any type
+Block/flood Selection, Copy, and Paste
+Monitor type recognized
+Monitor and blink wall rays added to Terrain menu (but not the displayed panel!)
+Object editor panel updated (CTRL-C instead of ALT-C)
+CTRL-K access to Kolor dialog for use in Text Entry mode
+Help topics added for Stat Editor and Tile Info
+Documentation on items, creatures, and terrain added to help
+Bug fixed: board move/delete no longer crash on passages w/o stats
+Aquire mode grows the backbuffer by default
+#play-back works on the back of other commands
+Bug fixed: importing a corrupt board crashed KevEdit
+Bug fixed: special bind index is now recognized in program length
+zztParam.magic1 broken into "leader" and "follower" for centipedes
+zztParam.magic2 renamed to just magic (it's all alone now)
+Objects may be #lock-ed and #unlock-ed
+Time remaining available for bombs
+ALT-T also runs zzt for testing (by popular demand)
+Monitor, blink rays, and dead smiley added to F3 menu
+Major overhaul of main() -- migrated most code to kevedit.c
+Statless players can be any colour
+Order of stats is no longer forgotten
+
+0.4.0: February 19, 2002
+------------------------
+Migration to libzzt2
+Music testing
+Better running of ZZT
+Text editor loads from and stores to registers
+Backbuffer Locking
+Pattern buffer quick keys 0-9
+Gradient draw tool improvements
+Terrain remains under creatures
+Board Movement and Deletion
+Board Transfer
+Board size statistics
+Quick key reference organized by key purpose
+All F-menu tiles implemented
+Dynamic dialog system introduced
+Param editing implemented! After all these years!!!
+
+0.3.4: November 14, 2001
+------------------------
+Bug fixed in help system
+Bug fixed: backbuffers now deallocated
+General code cleanup and organization
+Display library keyboard handling improved
+File dialogs support multiple directories
+ZZT goes directly to the title screen when run
+Text file loading allows for non-wordwrapping
+Gradient Tool
+
+0.3.3: October 27, 2001
+-----------------------
+Bug fixed in save dialog
+Bug fixed when cutting on a single line
+Fixed small memory leak when storing objects with truncated object code
+Board Info implemented
+CTRL used instead of ALT in copy/paste
+Hypertext help system implemented using help metafile
+Better path awareness -- ZZT worlds can be in any directory
+Improved floodfill system using selections
+Kolor selector
+ZZL support
+
+0.3.2: October 4, 2001
+----------------------
+Mini-keyboard handler chained to default one to detect shift keys
+Scrolls implemented
+Editing an object also edits its character
+Duplicators, ruffians, slimes, sharks implemented
+Getcolour function fixed for sharks
+Copy and paste in ZOC Editor
+Random floodfill, get mode, gradient mode
+Help displays readme file & interprets ZOC markup
+Many internal upgrades
+
+0.3.1: October 21, 2000
+-----------------------
+Blinkwall lines now drawn properly
+DPMI time slices are given up for more multitasking friendliness
+Text entry implemented
+ZZT-OOP editor import/export
+ZZT-OOP syntax highlighting improved to add #command argument highlighting
+
+0.3: August 22, 2000
+--------------------
+Bound DELETE to plot an empty
+ZZT OOP editor w/ syntax highlight & wordwrap implemented
+Bound modify to <enter>, grab only to <insert>
+Bound 'r' to run zzt on current world
+Moved drawscrollbox() to screen.c & added yendoffset (for highlight efficiency)
+Many more function key items added, blinking fixed
+
+0.2.1: August 12, 2000
+----------------------
+Player position bugfix
+Memory holes plugged
+Startup segfault fixed
+Blinking floodfill allowed
+
+0.2: August 7, 2000
+-------------------
+Many bugfixes
+Floodfill implimented
+Win95/Win98 support
+Starting board recognized
+
+0.1: June 14, 2000
+------------------
+Initial Release

@@ -1,0 +1,105 @@
+@Board Info Dialog
+$Board Info Dialog
+
+!title;Title
+!darkness;Board is Dark
+!zap;Re-enter When Zapped
+!timelimit;Time Limit
+!maxshots;Maximum Shots
+!boards;Adjacent Boards
+!boardlink;* Link feature *
+!size;Board Size
+
+Use ENTER to toggle or edit each of these
+properties. The LEFT and RIGHT arrows, as
+well as + and - will increase and
+decrease each option, where possible.
+
+:title;Title
+
+Press enter to change the title of the
+board. The title may be up to 34
+characters and may use the $ and !; zzt
+markup characters for special effects in
+the board dialogs.
+
+:darkness;Board is Dark
+
+Enter will toggle between darkness and
+brightness. The player must use torches to
+see in a dark room.
+
+:zap;Re-Enter When Zapped
+
+When this option is on and the player is
+shot or is touched by an enemy, he will
+be moved back to the position where he
+entered the room.
+!-zap;Ways the player is "zapped"
+
+When the player is zapped, he or she is
+returned to the position set by Re-Enter X
+and Re-Enter Y. Modifying these values is
+usually not useful, however, because ZZT
+sets them whenever the player enters a
+board.
+
+:timelimit;Time Limit
+
+A limit can be imposed on the amount the
+player may spend in a room. Once the time
+expires, the player is zapped and the
+counter starts over.
+
+This is most useful in combination with
+"Re-enter when zapped".
+
+Objects can #give and #take time.
+However, #give moves the counter closer
+to zero, while #take gives the player
+more time. If #take would put the timer
+over the time limit, it does not work and
+the message in take is sent.
+
+:maxshots;Maximum Shots
+
+This option determines how many shots the
+player may fire at the same time on a
+board. A player cannot fire until less
+than this number of his or her bullets
+remain on the board.
+
+:boards;Adjacent Boards
+
+This option links boards together so that
+the player can travel from one room to
+another by moving off the screen.
+
+:boardlink;* Link feature *
+
+KevEdit has a special feature to aid in
+the proper linkage of boards. An asterisk
+will appear next to any adjacent board
+which links back to the current board in
+the opposite direction. To force the other
+board to link backward, simply press '*'
+when that board is selected.
+
+Take that ZZT Editor.
+
+:size;Board Size
+
+The size of the current board is displayed
+at the bottom of the Board Info Dialog in
+units of both bytes and kilobytes, with
+1024 bytes to a kilobyte (not 1000!). If
+this value exceeds 20,000 bytes then the
+number will show red.
+
+There is much debate over exactly what the
+board size limit is for ZZT. By consensus,
+boards become unstable somewhere near
+20KB, but no one has yet proven any
+specific value. 20,000 bytes, which is
+just 469 bytes short of 20KB, seems as
+likely a candidate as any number.
