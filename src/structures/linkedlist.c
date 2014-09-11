@@ -26,7 +26,6 @@
 #include "linkedlist.h"
 
 #include <stdlib.h>
-#include <malloc.h>
 #include <string.h>
 
 /** An empty item. */

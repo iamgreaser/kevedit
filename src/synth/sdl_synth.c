@@ -24,7 +24,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
-#include "SDL.h"
+#include <SDL.h>
 
 #include "notes.h"
 #include "sdl_synth.h"

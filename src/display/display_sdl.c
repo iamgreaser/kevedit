@@ -24,7 +24,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "SDL.h"
+#include <SDL.h>
 
 #include "display.h"
 #include "display_sdl.h"
